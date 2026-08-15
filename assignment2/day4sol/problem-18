@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+#define MAX_STRING_SIZE 100
+
+int main(void)
+{
+    char enteredString[MAX_STRING_SIZE] = {0};
+    signed int readIndex = 0;
+    signed int writeIndex = 0;
+
+    printf("Enter a string: ");
+
+    if (fgets(enteredString, MAX_STRING_SIZE, stdin) == NULL)
+    {
+        printf("Invalid string!\n");
+        return 1;
+    }
+
+    while (enteredString[readIndex] != '\0' &&
+           enteredString[readIndex] != '\n')
+    {
+        if ((enteredString[readIndex] >= 'a' &&
+             enteredString[readIndex] <= 'z') ||
+            (enteredString[readIndex] >= 'A' &&
+             enteredString[readIndex] <= 'Z'))
+        {
+            enteredString[writeIndex] = enteredString[readIndex];
+            writeIndex++;
+        }
+
+        readIndex++;
+    }
+
+    enteredString[writeIndex] = '\0';
+
+    printf("Output String: %s\n", enteredString);
+
+    return 0;
+}

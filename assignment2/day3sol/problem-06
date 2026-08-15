@@ -1,0 +1,118 @@
+#include <stdio.h>
+
+#define MAX_ARRAY_SIZE 100
+
+int main(void)
+{
+    signed int firstArraySize = 0;
+    signed int secondArraySize = 0;
+    signed int firstIndex = 0;
+    signed int secondIndex = 0;
+    signed int mergedIndex = 0;
+
+    printf("Input number of elements in first array\n");
+
+    if (scanf("%d", &firstArraySize) != 1 ||
+        firstArraySize <= 0 ||
+        firstArraySize > MAX_ARRAY_SIZE)
+    {
+        printf("Invalid first array size!\n");
+        return 1;
+    }
+
+    signed int firstArray[firstArraySize];
+
+    printf("Input %d integers\n", firstArraySize);
+
+    for (firstIndex = 0; firstIndex < firstArraySize; firstIndex++)
+    {
+        if (scanf("%d", &firstArray[firstIndex]) != 1)
+        {
+            printf("Invalid array element!\n");
+            return 1;
+        }
+
+        if (firstIndex > 0 &&
+            firstArray[firstIndex] < firstArray[firstIndex - 1])
+        {
+            printf("First array must be sorted in ascending order!\n");
+            return 1;
+        }
+    }
+
+    printf("Input number of elements in second array\n");
+
+    if (scanf("%d", &secondArraySize) != 1 ||
+        secondArraySize <= 0 ||
+        secondArraySize > MAX_ARRAY_SIZE)
+    {
+        printf("Invalid second array size!\n");
+        return 1;
+    }
+
+    signed int secondArray[secondArraySize];
+    signed int mergedArray[firstArraySize + secondArraySize];
+
+    printf("Input %d integers\n", secondArraySize);
+
+    for (secondIndex = 0; secondIndex < secondArraySize; secondIndex++)
+    {
+        if (scanf("%d", &secondArray[secondIndex]) != 1)
+        {
+            printf("Invalid array element!\n");
+            return 1;
+        }
+
+        if (secondIndex > 0 &&
+            secondArray[secondIndex] < secondArray[secondIndex - 1])
+        {
+            printf("Second array must be sorted in ascending order!\n");
+            return 1;
+        }
+    }
+
+    firstIndex = 0;
+    secondIndex = 0;
+
+    while (firstIndex < firstArraySize &&
+           secondIndex < secondArraySize)
+    {
+        if (firstArray[firstIndex] <= secondArray[secondIndex])
+        {
+            mergedArray[mergedIndex] = firstArray[firstIndex];
+            firstIndex++;
+        }
+        else
+        {
+            mergedArray[mergedIndex] = secondArray[secondIndex];
+            secondIndex++;
+        }
+
+        mergedIndex++;
+    }
+
+    while (firstIndex < firstArraySize)
+    {
+        mergedArray[mergedIndex] = firstArray[firstIndex];
+        firstIndex++;
+        mergedIndex++;
+    }
+
+    while (secondIndex < secondArraySize)
+    {
+        mergedArray[mergedIndex] = secondArray[secondIndex];
+        secondIndex++;
+        mergedIndex++;
+    }
+
+    printf("Sorted array:\n");
+
+    for (mergedIndex = 0;
+         mergedIndex < firstArraySize + secondArraySize;
+         mergedIndex++)
+    {
+        printf("%d\n", mergedArray[mergedIndex]);
+    }
+
+    return 0;
+}

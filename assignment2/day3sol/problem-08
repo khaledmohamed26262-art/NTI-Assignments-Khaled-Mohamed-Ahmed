@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+#define PERSON_COUNT 15U
+
+int main(void)
+{
+    signed int personAge = 0;
+    unsigned char personNumber = 0U;
+    unsigned char stillBabyCount = 0U;
+    unsigned char attendingSchoolCount = 0U;
+    unsigned char adultLifeCount = 0U;
+
+    printf("Enter 15 an age\n");
+
+    while (personNumber < PERSON_COUNT)
+    {
+        if (scanf("%d", &personAge) != 1 || personAge < 0)
+        {
+            printf("Invalid age!\n");
+            return 1;
+        }
+
+        if (personAge <= 5)
+        {
+            stillBabyCount++;
+        }
+        else if (personAge <= 17)
+        {
+            attendingSchoolCount++;
+        }
+        else
+        {
+            adultLifeCount++;
+        }
+
+        personNumber++;
+    }
+
+    printf("\nnumbers of Still a baby:%hhu\n", stillBabyCount);
+    printf("numbers of Attending school :%hhu\n", attendingSchoolCount);
+    printf("numbers of adult life :%hhu\n", adultLifeCount);
+
+    return 0;
+}

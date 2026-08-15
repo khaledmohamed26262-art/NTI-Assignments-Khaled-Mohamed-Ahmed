@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+#define MAX_STRING_SIZE 100
+
+int main(void)
+{
+    char enteredString[MAX_STRING_SIZE] = {0};
+    signed int readIndex = 0;
+    signed int writeIndex = 0;
+    unsigned char previousWasSpace = 0U;
+
+    printf("Enter some text\n");
+
+    if (fgets(enteredString, MAX_STRING_SIZE, stdin) == NULL)
+    {
+        printf("Invalid string!\n");
+        return 1;
+    }
+
+    while (enteredString[readIndex] != '\0' &&
+           enteredString[readIndex] != '\n')
+    {
+        if (enteredString[readIndex] != ' ')
+        {
+            enteredString[writeIndex] = enteredString[readIndex];
+            writeIndex++;
+            previousWasSpace = 0U;
+        }
+        else if (writeIndex > 0 && previousWasSpace == 0U)
+        {
+            enteredString[writeIndex] = ' ';
+            writeIndex++;
+            previousWasSpace = 1U;
+        }
+
+        readIndex++;
+    }
+
+    if (writeIndex > 0 && enteredString[writeIndex - 1] == ' ')
+    {
+        writeIndex--;
+    }
+
+    enteredString[writeIndex] = '\0';
+
+    printf("Text after removing blanks\n");
+    printf("%s\n", enteredString);
+
+    return 0;
+}

@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+#define MAX_STRING_SIZE 100
+
+int main(void)
+{
+    char enteredString[MAX_STRING_SIZE] = {0};
+    char searchedCharacter = '\0';
+    signed int index = 0;
+    signed int frequency = 0;
+
+    printf("Enter a string: ");
+
+    if (scanf("%99[^\n]", enteredString) != 1)
+    {
+        printf("Invalid string!\n");
+        return 1;
+    }
+
+    printf("Enter a character to find the frequency: ");
+
+    if (scanf(" %c", &searchedCharacter) != 1)
+    {
+        printf("Invalid character!\n");
+        return 1;
+    }
+
+    while (enteredString[index] != '\0')
+    {
+        if (enteredString[index] == searchedCharacter)
+        {
+            frequency++;
+        }
+
+        index++;
+    }
+
+    printf("Frequency of %c = %d\n", searchedCharacter, frequency);
+
+    return 0;
+}

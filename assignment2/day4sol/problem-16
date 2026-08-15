@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+#define MAX_STRING_SIZE 100
+
+int main(void)
+{
+    char enteredString[MAX_STRING_SIZE] = {0};
+    char currentCharacter = '\0';
+    signed int index = 0;
+    signed int vowelCount = 0;
+    signed int consonantCount = 0;
+    signed int digitCount = 0;
+    signed int whiteSpaceCount = 0;
+
+    printf("Enter a line of string: ");
+
+    if (fgets(enteredString, MAX_STRING_SIZE, stdin) == NULL)
+    {
+        printf("Invalid string!\n");
+        return 1;
+    }
+
+    while (enteredString[index] != '\0' &&
+           enteredString[index] != '\n')
+    {
+        currentCharacter = enteredString[index];
+
+        if (currentCharacter == 'a' || currentCharacter == 'e' ||
+            currentCharacter == 'i' || currentCharacter == 'o' ||
+            currentCharacter == 'u' || currentCharacter == 'A' ||
+            currentCharacter == 'E' || currentCharacter == 'I' ||
+            currentCharacter == 'O' || currentCharacter == 'U')
+        {
+            vowelCount++;
+        }
+        else if ((currentCharacter >= 'a' && currentCharacter <= 'z') ||
+                 (currentCharacter >= 'A' && currentCharacter <= 'Z'))
+        {
+            consonantCount++;
+        }
+        else if (currentCharacter >= '0' && currentCharacter <= '9')
+        {
+            digitCount++;
+        }
+        else if (currentCharacter == ' ' || currentCharacter == '\t')
+        {
+            whiteSpaceCount++;
+        }
+
+        index++;
+    }
+
+    printf("Vowels: %d\n", vowelCount);
+    printf("Consonants: %d\n", consonantCount);
+    printf("Digits: %d\n", digitCount);
+    printf("White spaces: %d\n", whiteSpaceCount);
+
+    return 0;
+}

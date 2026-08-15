@@ -1,0 +1,71 @@
+#include <stdio.h>
+
+#define MAX_ARRAY_SIZE 100
+
+int main(void)
+{
+    signed int arraySize = 0;
+    signed int index = 0;
+    signed int insertedElement = 0;
+    signed int insertionPosition = 0;
+
+    printf("Enter size of the array : ");
+
+    if (scanf("%d", &arraySize) != 1 ||
+        arraySize <= 0 ||
+        arraySize > MAX_ARRAY_SIZE)
+    {
+        printf("Invalid array size!\n");
+        return 1;
+    }
+
+    signed int arrayElements[arraySize + 1];
+
+    printf("Enter elements in array :\n");
+
+    for (index = 0; index < arraySize; index++)
+    {
+        if (scanf("%d", &arrayElements[index]) != 1)
+        {
+            printf("Invalid array element!\n");
+            return 1;
+        }
+    }
+
+    printf("Enter element to insert : ");
+
+    if (scanf("%d", &insertedElement) != 1)
+    {
+        printf("Invalid element!\n");
+        return 1;
+    }
+
+    printf("Enter the element position : ");
+
+    if (scanf("%d", &insertionPosition) != 1 ||
+        insertionPosition < 1 ||
+        insertionPosition > arraySize + 1)
+    {
+        printf("Invalid insertion position!\n");
+        return 1;
+    }
+
+    for (index = arraySize; index >= insertionPosition; index--)
+    {
+        arrayElements[index] = arrayElements[index - 1];
+    }
+
+    arrayElements[insertionPosition - 1] = insertedElement;
+    arraySize++;
+
+    printf("Array elements after insertion : ");
+
+    for (index = 0; index < arraySize; index++)
+    {
+        printf("%d\t", arrayElements[index]);
+    }
+
+    printf("\n");
+
+    return 0;
+}

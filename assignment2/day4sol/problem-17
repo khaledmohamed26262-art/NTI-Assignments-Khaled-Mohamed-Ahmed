@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+#define ARRAY_SIZE 10
+
+int main(void)
+{
+    signed int arrayElements[ARRAY_SIZE] = {0};
+    signed int index = 0;
+    signed int rotation = 0;
+    signed int rotationCount = 0;
+    signed int lastElement = 0;
+
+    printf("Enter 10 elements array: ");
+
+    for (index = 0; index < ARRAY_SIZE; index++)
+    {
+        if (scanf("%d", &arrayElements[index]) != 1)
+        {
+            printf("Invalid array element!\n");
+            return 1;
+        }
+    }
+
+    printf("Enter number of times to right rotate: ");
+
+    if (scanf("%d", &rotationCount) != 1 || rotationCount < 0)
+    {
+        printf("Invalid rotation number!\n");
+        return 1;
+    }
+
+    printf("Array before rotation: ");
+
+    for (index = 0; index < ARRAY_SIZE; index++)
+    {
+        printf("%d ", arrayElements[index]);
+    }
+
+    rotationCount %= ARRAY_SIZE;
+
+    for (rotation = 0; rotation < rotationCount; rotation++)
+    {
+        lastElement = arrayElements[ARRAY_SIZE - 1];
+
+        for (index = ARRAY_SIZE - 1; index > 0; index--)
+        {
+            arrayElements[index] = arrayElements[index - 1];
+        }
+
+        arrayElements[0] = lastElement;
+    }
+
+    printf("\n\nArray after rotation\n");
+
+    for (index = 0; index < ARRAY_SIZE; index++)
+    {
+        printf("%d ", arrayElements[index]);
+    }
+
+    printf("\n");
+
+    return 0;
+}

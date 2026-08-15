@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+#define MAX_STRING_SIZE 100
+
+int main(void)
+{
+    char enteredString[MAX_STRING_SIZE] = {0};
+    signed int stringLength = 0;
+
+    printf("Enter a string: ");
+
+    if (fgets(enteredString, MAX_STRING_SIZE, stdin) == NULL)
+    {
+        printf("Invalid string!\n");
+        return 1;
+    }
+
+    while (enteredString[stringLength] != '\0' &&
+           enteredString[stringLength] != '\n')
+    {
+        stringLength++;
+    }
+
+    printf("Length of string: %d\n", stringLength);
+
+    return 0;
+}

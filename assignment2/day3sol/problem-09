@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+#define ARRAY_SIZE 10U
+
+int main(void)
+{
+    signed int numbers[ARRAY_SIZE] = {0};
+    unsigned char index = 0U;
+
+    printf("enter the element of an array\n");
+
+    for (index = 0U; index < ARRAY_SIZE; index++)
+    {
+        if (scanf("%d", &numbers[index]) != 1)
+        {
+            printf("Invalid input!\n");
+            return 1;
+        }
+    }
+
+    printf("Alternate elements of a given array\n");
+
+    for (index = 0U; index < ARRAY_SIZE; index += 2U)
+    {
+        printf("%d\n", numbers[index]);
+    }
+
+    return 0;
+}

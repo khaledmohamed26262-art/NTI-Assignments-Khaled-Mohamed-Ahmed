@@ -1,0 +1,64 @@
+#include <stdio.h>
+
+#define MINIMUM_ARRAY_SIZE 2
+#define MAXIMUM_ARRAY_SIZE 1000
+
+int main(void)
+{
+    signed int enteredSize = 0;
+    signed int enteredNumber = 0;
+    unsigned short arraySize = 0U;
+    unsigned short index = 0U;
+    unsigned short previousIndex = 0U;
+    unsigned int expectedSum = 0U;
+    unsigned int actualSum = 0U;
+    unsigned int missingNumber = 0U;
+
+    printf("Enter size of array : ");
+
+    if (scanf("%d", &enteredSize) != 1 ||
+        enteredSize < MINIMUM_ARRAY_SIZE ||
+        enteredSize > MAXIMUM_ARRAY_SIZE)
+    {
+        printf("Invalid array size!\n");
+        return 1;
+    }
+
+    arraySize = (unsigned short)enteredSize;
+    unsigned short numbers[arraySize - 1U];
+
+    printf("Enter elements into array :\n");
+
+    for (index = 0U; index < arraySize - 1U; index++)
+    {
+        if (scanf("%d", &enteredNumber) != 1 ||
+            enteredNumber < 1 ||
+            enteredNumber > enteredSize)
+        {
+            printf("Invalid array element!\n");
+            return 1;
+        }
+
+        numbers[index] = (unsigned short)enteredNumber;
+
+        for (previousIndex = 0U; previousIndex < index; previousIndex++)
+        {
+            if (numbers[index] == numbers[previousIndex])
+            {
+                printf("Invalid array element!\n");
+                return 1;
+            }
+        }
+
+        actualSum += numbers[index];
+    }
+
+    expectedSum =
+        (unsigned int)arraySize * ((unsigned int)arraySize + 1U) / 2U;
+
+    missingNumber = expectedSum - actualSum;
+
+    printf("Missing element is : %u\n", missingNumber);
+
+    return 0;
+}

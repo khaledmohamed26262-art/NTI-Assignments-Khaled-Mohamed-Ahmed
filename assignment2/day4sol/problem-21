@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+#define MAX_STRING_SIZE 100
+
+int main(void)
+{
+    char sourceString[MAX_STRING_SIZE] = {0};
+    char copiedString[MAX_STRING_SIZE] = {0};
+    signed int index = 0;
+
+    printf("Enter string s1: ");
+
+    if (fgets(sourceString, MAX_STRING_SIZE, stdin) == NULL)
+    {
+        printf("Invalid string!\n");
+        return 1;
+    }
+
+    while (sourceString[index] != '\0' &&
+           sourceString[index] != '\n')
+    {
+        copiedString[index] = sourceString[index];
+        index++;
+    }
+
+    copiedString[index] = '\0';
+
+    printf("String s2: %s\n", copiedString);
+
+    return 0;
+}

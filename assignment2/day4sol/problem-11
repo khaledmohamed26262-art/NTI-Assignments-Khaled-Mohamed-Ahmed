@@ -1,0 +1,110 @@
+#include <stdio.h>
+
+#define MAXIMUM_ARRAY_SIZE 1000
+
+int main(void)
+{
+    signed int enteredSize = 0;
+    unsigned int arraySize = 0U;
+    unsigned int firstIndex = 0U;
+    unsigned int secondIndex = 0U;
+    unsigned int mergedIndex = 0U;
+    unsigned int mergedSize = 0U;
+    unsigned int middleIndex = 0U;
+    double median = 0.0;
+
+    printf("enter size of array_1: ");
+
+    if (scanf("%d", &enteredSize) != 1 ||
+        enteredSize <= 0 ||
+        enteredSize > MAXIMUM_ARRAY_SIZE)
+    {
+        printf("Invalid array size!\n");
+        return 1;
+    }
+
+    arraySize = (unsigned int)enteredSize;
+    signed int firstArray[arraySize];
+
+    printf("enter elements of array_1:\n");
+
+    for (firstIndex = 0U; firstIndex < arraySize; firstIndex++)
+    {
+        printf("enter element_%u:", firstIndex + 1U);
+
+        if (scanf("%d", &firstArray[firstIndex]) != 1)
+        {
+            printf("Invalid array element!\n");
+            return 1;
+        }
+    }
+
+    printf("enter size of array_2: ");
+
+    if (scanf("%d", &enteredSize) != 1 ||
+        enteredSize != (signed int)arraySize)
+    {
+        printf("The two arrays must have the same size!\n");
+        return 1;
+    }
+
+    signed int secondArray[arraySize];
+    mergedSize = arraySize * 2U;
+    signed int mergedArray[mergedSize];
+
+    printf("enter elements of array_2:\n");
+
+    for (secondIndex = 0U; secondIndex < arraySize; secondIndex++)
+    {
+        printf("enter element_%u:", secondIndex + 1U);
+
+        if (scanf("%d", &secondArray[secondIndex]) != 1)
+        {
+            printf("Invalid array element!\n");
+            return 1;
+        }
+    }
+
+    firstIndex = 0U;
+    secondIndex = 0U;
+    mergedIndex = 0U;
+
+    while (firstIndex < arraySize && secondIndex < arraySize)
+    {
+        if (firstArray[firstIndex] <= secondArray[secondIndex])
+        {
+            mergedArray[mergedIndex] = firstArray[firstIndex];
+            firstIndex++;
+        }
+        else
+        {
+            mergedArray[mergedIndex] = secondArray[secondIndex];
+            secondIndex++;
+        }
+
+        mergedIndex++;
+    }
+
+    while (firstIndex < arraySize)
+    {
+        mergedArray[mergedIndex] = firstArray[firstIndex];
+        firstIndex++;
+        mergedIndex++;
+    }
+
+    while (secondIndex < arraySize)
+    {
+        mergedArray[mergedIndex] = secondArray[secondIndex];
+        secondIndex++;
+        mergedIndex++;
+    }
+
+    middleIndex = mergedSize / 2U;
+
+    median = ((double)mergedArray[middleIndex - 1U] / 2.0) +
+             ((double)mergedArray[middleIndex] / 2.0);
+
+    printf("Median is %g\n", median);
+
+    return 0;
+}

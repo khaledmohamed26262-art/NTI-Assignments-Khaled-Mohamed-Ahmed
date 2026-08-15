@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+#define FIRST_ARRAY_SIZE 20U
+#define SECOND_ARRAY_SIZE 10U
+
+int main(void)
+{
+    unsigned char firstArray[FIRST_ARRAY_SIZE] =
+    {
+        1U, 3U, 5U, 7U, 9U, 11U, 13U, 15U, 17U, 19U
+    };
+
+    unsigned char secondArray[SECOND_ARRAY_SIZE] =
+    {
+        2U, 4U, 6U, 8U, 10U, 12U, 14U, 16U, 18U, 20U
+    };
+
+    unsigned char index = 0U;
+
+    for (index = SECOND_ARRAY_SIZE; index > 0U; index--)
+    {
+        firstArray[(index * 2U) - 2U] = firstArray[index - 1U];
+        firstArray[(index * 2U) - 1U] = secondArray[index - 1U];
+    }
+
+    for (index = 0U; index < FIRST_ARRAY_SIZE; index++)
+    {
+        printf("%hhu", firstArray[index]);
+
+        if (index < FIRST_ARRAY_SIZE - 1U)
+        {
+            printf(" ");
+        }
+    }
+
+    printf("\n");
+
+    return 0;
+}

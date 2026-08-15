@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+#define MAX_STRING_SIZE 100
+#define RESULT_SIZE 200
+
+int main(void)
+{
+    char firstString[RESULT_SIZE] = {0};
+    char secondString[MAX_STRING_SIZE] = {0};
+    signed int firstLength = 0;
+    signed int secondIndex = 0;
+
+    printf("Enter first string: ");
+
+    if (fgets(firstString, MAX_STRING_SIZE, stdin) == NULL)
+    {
+        printf("Invalid string!\n");
+        return 1;
+    }
+
+    while (firstString[firstLength] != '\0' &&
+           firstString[firstLength] != '\n')
+    {
+        firstLength++;
+    }
+
+    firstString[firstLength] = '\0';
+
+    printf("Enter second string: ");
+
+    if (fgets(secondString, MAX_STRING_SIZE, stdin) == NULL)
+    {
+        printf("Invalid string!\n");
+        return 1;
+    }
+
+    while (secondString[secondIndex] != '\0' &&
+           secondString[secondIndex] != '\n')
+    {
+        firstString[firstLength] = secondString[secondIndex];
+        firstLength++;
+        secondIndex++;
+    }
+
+    firstString[firstLength] = '\0';
+
+    printf("After concatenation: %s\n", firstString);
+
+    return 0;
+}

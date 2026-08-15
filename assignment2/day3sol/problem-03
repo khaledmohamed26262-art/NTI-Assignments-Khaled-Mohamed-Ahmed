@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+#define MAX_ARRAY_SIZE 1000
+
+int main(void)
+{
+    signed int arraySize = 0;
+    signed int index = 0;
+    signed int largestElement = 0;
+    signed int secondLargestElement = 0;
+    unsigned char secondLargestFound = 0U;
+
+    printf("Enter size of the array (1-1000): ");
+
+    if (scanf("%d", &arraySize) != 1 ||
+        arraySize < 1 ||
+        arraySize > MAX_ARRAY_SIZE)
+    {
+        printf("Invalid array size!\n");
+        return 1;
+    }
+
+    signed int arrayElements[arraySize];
+
+    printf("Enter elements in the array:\n");
+
+    for (index = 0; index < arraySize; index++)
+    {
+        if (scanf("%d", &arrayElements[index]) != 1)
+        {
+            printf("Invalid array element!\n");
+            return 1;
+        }
+    }
+
+    largestElement = arrayElements[0];
+
+    for (index = 1; index < arraySize; index++)
+    {
+        if (arrayElements[index] > largestElement)
+        {
+            secondLargestElement = largestElement;
+            largestElement = arrayElements[index];
+            secondLargestFound = 1U;
+        }
+        else if (arrayElements[index] < largestElement &&
+                 (secondLargestFound == 0U ||
+                  arrayElements[index] > secondLargestElement))
+        {
+            secondLargestElement = arrayElements[index];
+            secondLargestFound = 1U;
+        }
+    }
+
+    printf("First largest = %d\n", largestElement);
+
+    if (secondLargestFound == 1U)
+    {
+        printf("Second largest = %d\n", secondLargestElement);
+    }
+    else
+    {
+        printf("No distinct second largest element.\n");
+    }
+
+    return 0;
+}

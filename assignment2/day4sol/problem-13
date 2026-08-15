@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+#define MAX_ARRAY_SIZE 100
+
+int main(void)
+{
+    signed int arraySize = 0;
+    signed int index = 0;
+    signed int evenCount = 0;
+    signed int oddCount = 0;
+
+    printf("Enter size of the array: ");
+
+    if (scanf("%d", &arraySize) != 1 ||
+        arraySize <= 0 ||
+        arraySize > MAX_ARRAY_SIZE)
+    {
+        printf("Invalid array size!\n");
+        return 1;
+    }
+
+    signed int arrayElements[arraySize];
+    signed int evenElements[arraySize];
+    signed int oddElements[arraySize];
+
+    printf("Enter elements in the array: ");
+
+    for (index = 0; index < arraySize; index++)
+    {
+        if (scanf("%d", &arrayElements[index]) != 1)
+        {
+            printf("Invalid array element!\n");
+            return 1;
+        }
+
+        if (arrayElements[index] % 2 == 0)
+        {
+            evenElements[evenCount] = arrayElements[index];
+            evenCount++;
+        }
+        else
+        {
+            oddElements[oddCount] = arrayElements[index];
+            oddCount++;
+        }
+    }
+
+    printf("\nElements of even array:\n");
+    printf("Elements in the array: ");
+
+    for (index = 0; index < evenCount; index++)
+    {
+        printf("%d ", evenElements[index]);
+    }
+
+    printf("\n\nElements of odd array:\n");
+    printf("Elements in the array: ");
+
+    for (index = 0; index < oddCount; index++)
+    {
+        printf("%d ", oddElements[index]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
