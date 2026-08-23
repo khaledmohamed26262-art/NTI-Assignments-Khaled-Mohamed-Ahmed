@@ -1,0 +1,51 @@
+<circuit version="1.1.0-SR2" rev="260312" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="100,-256" rotation="0" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="../../../Desktop/NTI-ASSIGNMENT-3/program-08-led-brightness-embedded/release/LedBrightness.hex" Auto_Load="true" saveEepr="true" Logic_Symbol="false" Wdt_enabled="false" varList="ADCH,OCR0,ADMUX,ADCSRA" MainMcu="true" eeprom="12,148,42,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,12,148,52,0,17,36,31,190,207,229,216,224,222,191,205,191,14,148,145,1,12,148,170,1,12,148,0,0,128,230,135,185,134,224,134,185,55,154,8,149,136,48,16,240,128,224,8,149,151,177,144,126,152,43,151,185,54,154,54,153,254,207,133,177,8,149,104,48,248,244,65,48,241,240,224,244,130,48,9,244,80,192,96,244,129,21,129,241,39,179,129,224,1,192,136,15,106,149,234,247,128,149,130,35,135,187,8,149,131,48,9,240,74,192,33,179,129,224,1,192,136,15,106,149,234,247,128,149,130,35,129,187,8,149,130,48,17,241,88,244,129,21,65,241,135,179,33,224,1,192,34,15,106,149,234,247,130,43,135,187,8,149,131,48,153,244,129,179,33,224,1,192,34,15,106,149,234,247,130,43,129,187,8,149,42,179,129,224,1,192,136,15,106,149,234,247,128,149,130,35,138,187,8,149,8,149,132,179,33,224,1,192,34,15,106,149,234,247,130,43,132,187,8,149,138,179,33,224,1,192,34,15,106,149,234,247,130,43,138,187,8,149,36,179,129,224,1,192,136,15,106,149,234,247,128,149,130,35,132,187,8,149,8,149,145,224,97,48,9,240,144,224,145,149,130,48,73,240,32,244,129,21,65,240,151,187,8,149,131,48,49,244,145,187,8,149,148,187,8,149,154,187,8,149,8,149,104,48,248,244,65,48,241,240,224,244,130,48,9,244,80,192,96,244,129,21,129,241,40,179,129,224,1,192,136,15,106,149,234,247,128,149,130,35,136,187,8,149,131,48,9,240,74,192,34,179,129,224,1,192,136,15,106,149,234,247,128,149,130,35,130,187,8,149,130,48,17,241,88,244,129,21,65,241,136,179,33,224,1,192,34,15,106,149,234,247,130,43,136,187,8,149,131,48,153,244,130,179,33,224,1,192,34,15,106,149,234,247,130,43,130,187,8,149,43,179,129,224,1,192,136,15,106,149,234,247,128,149,130,35,139,187,8,149,8,149,133,179,33,224,1,192,34,15,106,149,234,247,130,43,133,187,8,149,139,179,33,224,1,192,34,15,106,149,234,247,130,43,139,187,8,149,37,179,129,224,1,192,136,15,106,149,234,247,128,149,130,35,133,187,8,149,8,149,130,48,73,240,32,244,129,21,65,240,104,187,8,149,131,48,49,244,98,187,8,149,101,187,8,149,107,187,8,149,8,149,104,48,144,244,65,21,81,5,121,240,130,48,145,240,104,244,129,21,137,240,134,179,144,224,2,192,149,149,135,149,106,149,226,247,129,112,250,1,128,131,8,149,131,48,49,244,128,179,242,207,131,179,240,207,137,179,238,207,8,149,104,48,192,244,130,48,185,240,88,244,129,21,233,240,136,179,33,224,1,192,34,15,106,149,234,247,130,39,136,187,8,149,131,48,217,244,130,179,33,224,1,192,34,15,106,149,234,247,130,39,130,187,8,149,133,179,33,224,1,192,34,15,106,149,234,247,130,39,133,187,8,149,139,179,33,224,1,192,34,15,106,149,234,247,130,39,139,187,8,149,8,149,19,190,131,183,128,100,131,191,131,183,128,98,131,191,131,183,136,96,131,191,131,183,131,96,131,191,28,190,8,149,140,191,8,149,64,224,96,224,128,224,14,148,73,0,64,224,96,224,128,224,14,148,193,0,65,224,99,224,129,224,14,148,73,0,14,148,54,0,14,148,128,1,128,224,14,148,60,0,14,148,143,1,250,207,248,148,255,207," SerialMon="-1" />
+
+<item itemtype="Potentiometer" CircId="Potentiometer-2" mainComp="false" ShowProp="Value_Ohm" Show_id="false" Show_Val="true" Pos="-20,-116" rotation="0" hflip="1" vflip="1" label="Potentiometer-2" idLabPos="-16,-40" labelrot="0" valLabPos="15,-20" valLabRot="0" Resistance="1 kΩ" Value_Ohm="29 Ω" Slider="false" Scale="1" />
+
+<item itemtype="Led" CircId="Led-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-100,-48" rotation="0" hflip="1" vflip="1" label="Led-3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="true" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="Resistor" CircId="Resistor-4" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-20,-16" rotation="0" hflip="1" vflip="1" label="Resistor-4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="220 Ω" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-5" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="-160,-204" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-5" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Ground" CircId="Ground-6" mainComp="false" Show_id="false" Show_Val="false" Pos="188,-4" rotation="0" hflip="1" vflip="1" label="Ground-6" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Capacitor" CircId="Capacitor-9" mainComp="false" ShowProp="Capacitance" Show_id="false" Show_Val="true" Pos="-96,-128" rotation="0" hflip="1" vflip="1" label="Capacitor-9" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Capacitance="0.1 µF" Resistance="1 µΩ" InitVolt="0 V" ReaStep="0 ns" />
+
+<item itemtype="Node" CircId="Node-7" mainComp="false" Pos="-144,-200" />
+
+<item itemtype="Node" CircId="Node-8" mainComp="false" Pos="188,-56" />
+
+<item itemtype="Node" CircId="Node-12" mainComp="false" Pos="188,-20" />
+
+<item itemtype="Node" CircId="Node-18" mainComp="false" Pos="188,-44" />
+
+<item itemtype="Connector" uid="Connector-3" startpinid="Node-7-1" endpinid="Potentiometer-2-PinA" pointList="-144,-200,-36,-200,-36,-116" />
+
+<item itemtype="Connector" uid="Connector-4" startpinid="Fixed Voltage-5-outnod" endpinid="Node-7-0" pointList="-144,-204,-144,-200" />
+
+<item itemtype="Connector" uid="Connector-5" startpinid="Node-7-2" endpinid="mega32-1-RST" pointList="-144,-200,-144,-184,92,-184" />
+
+<item itemtype="Connector" uid="Connector-6" startpinid="Potentiometer-2-PinB" endpinid="Node-8-1" pointList="-4,-116,84,-116,84,-56,188,-56" />
+
+<item itemtype="Connector" uid="Connector-7" startpinid="Ground-6-Gnd" endpinid="Node-8-0" pointList="188,-20,188,-56" />
+
+<item itemtype="Connector" uid="Connector-10" startpinid="Led-3-lPin" endpinid="Resistor-4-lPin" pointList="-116,-48,-116,-16,-36,-16" />
+
+<item itemtype="Connector" uid="Connector-11" startpinid="Resistor-4-rPin" endpinid="mega32-1-PORTB3" pointList="-4,-16,60,-16,60,-224,92,-224" />
+
+<item itemtype="Connector" uid="Connector-14" startpinid="Capacitor-9-lPin" endpinid="mega32-1-PORTV1" pointList="-112,-128,-112,-284,212,-284,212,-184,156,-184" />
+
+<item itemtype="Connector" uid="Connector-23" startpinid="Capacitor-9-rPin" endpinid="Node-12-1" pointList="-80,-128,-80,-40,188,-40,188,-20" />
+
+<item itemtype="Connector" uid="Connector-25" startpinid="Node-12-2" endpinid="Ground-6-Gnd" pointList="188,-20,188,-20" />
+
+<item itemtype="Connector" uid="Connector-46" startpinid="mega32-1-PORTA0" endpinid="Node-18-1" pointList="156,-248,188,-248,188,-44" />
+
+<item itemtype="Connector" uid="Connector-47" startpinid="Node-8-2" endpinid="Node-18-0" pointList="188,-56,188,-44" />
+
+<item itemtype="Connector" uid="Connector-48" startpinid="Node-18-2" endpinid="Node-12-0" pointList="188,-44,188,-20" />
+
+</circuit>
