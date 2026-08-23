@@ -1,0 +1,8 @@
+#ifndef MCAL_ADC_CONFIG_H
+#define MCAL_ADC_CONFIG_H
+
+#define ADC_AVCC_REFERENCE  0x40U
+#define ADC_LEFT_ADJUSTMENT 0x20U
+#define ADC_PRESCALER_64    0x06U
+
+#endif

@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+    848	      0	      0	    848	    350	C:\Users\khale\Desktop\NTI-ASSIGNMENT-3\program-08-led-brightness-embedded\release\LedBrightness.elf

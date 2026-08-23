@@ -1,0 +1,7 @@
+#ifndef MCAL_DIO_PRIVATE_H
+#define MCAL_DIO_PRIVATE_H
+
+#define DIO_ALL_PINS_INPUT  0x00U
+#define DIO_ALL_PINS_OUTPUT 0xFFU
+
+#endif

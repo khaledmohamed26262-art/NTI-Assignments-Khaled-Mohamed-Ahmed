@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+    954	      0	      0	    954	    3ba	C:\Users\khale\Desktop\NTI-ASSIGNMENT-3\program-07-toggle-led-embedded\release\ToggleLed.elf

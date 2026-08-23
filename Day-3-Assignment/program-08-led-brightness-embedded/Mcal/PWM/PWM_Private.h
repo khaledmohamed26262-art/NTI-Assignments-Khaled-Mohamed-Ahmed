@@ -1,0 +1,8 @@
+#ifndef MCAL_PWM_PRIVATE_H
+#define MCAL_PWM_PRIVATE_H
+
+#define TIMER0_WGM00_BIT 6U
+#define TIMER0_COM01_BIT 5U
+#define TIMER0_WGM01_BIT 3U
+
+#endif

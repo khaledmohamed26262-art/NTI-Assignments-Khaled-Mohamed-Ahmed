@@ -1,0 +1,6 @@
+#ifndef MCAL_PWM_CONFIG_H
+#define MCAL_PWM_CONFIG_H
+
+#define PWM_TIMER0_PRESCALER_64 0x03U
+
+#endif
