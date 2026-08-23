@@ -4,8 +4,8 @@
 
 void ADC_Init(void)
 {
-    ADMUX_Reg = 0x60U;   /* AVCC reference, left adjustment, ADC0 */
-    ADCSRA_Reg = 0x86U;  /* Enable ADC, prescaler 64 */
+    ADMUX_Reg = 0x60U;  
+    ADCSRA_Reg = 0x86U;  
 }
 
 uint8_t ADC_ReadChannel(uint8_t channel)
