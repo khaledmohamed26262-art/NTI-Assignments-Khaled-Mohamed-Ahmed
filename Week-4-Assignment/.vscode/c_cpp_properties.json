@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "ATmega32",
+            "compilerPath": "C:/12/avr8-gnu-toolchain-4.0.0.52-win32.any.x86_64 (1)/avr8-gnu-toolchain-win32_x86_64/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega32"
+            ],
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/12/avr8-gnu-toolchain-4.0.0.52-win32.any.x86_64 (1)/avr8-gnu-toolchain-win32_x86_64/avr/include"
+            ],
+            "defines": [
+                "F_CPU=8000000UL",
+                "__AVR_ATmega32__"
+            ],
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-x86"
+        }
+    ],
+    "version": 4
+}
